@@ -10,6 +10,7 @@ let hr = date.getHours();
 let min = date.getMinutes();
 let sec = date.getSeconds();
 
+console.log(min);
 digitalClock.innerHTML = `${hr}:${min} <span style="color: gray;">Sydney, Australia`;
 
 // log date
@@ -35,6 +36,10 @@ const runClock = () => {
 const app = () => {
   // run function every second (1000ms)
   setInterval(runClock, 1000);
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
 };
 
 app();
