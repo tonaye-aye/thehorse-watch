@@ -1,13 +1,17 @@
 // variable containers
-const hourHand = document.querySelector("#hour");
-const minHand = document.querySelector("#minute");
-const secHand = document.querySelector("#second");
+const hourHand = document.querySelector('#hour');
+const minHand = document.querySelector('#minute');
+const secHand = document.querySelector('#second');
+const digitalClock = document.querySelector('.digital-clock');
 
 // get date
 const date = new Date();
 let hr = date.getHours();
 let min = date.getMinutes();
 let sec = date.getSeconds();
+
+digitalClock.innerHTML = `${hr}:${min} <span style="color: gray;">Sydney, Australia`;
+
 // log date
 console.log(`Hour: ${hr} Minute: ${min} Second: ${sec}`);
 
