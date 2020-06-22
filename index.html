@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock 2.0</title>
+    <style>
+      @import url(//db.onlinewebfonts.com/c/b1edfa746f416280b3502ba39df2c3ae?family=Canela);
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&display=swap');
+      @import url('./style.css');
+    </style>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="clockbox">
+        <div class="clock">
+          <svg
+            id="clock-fill"
+            xmlns="http://www.w3.org/2000/svg"
+            width="600"
+            height="600"
+            viewBox="0 0 600 600"
+          >
+            <g>
+              <circle class="circle-fill" cx="300" cy="300" r="253.9" />
+            </g>
+          </svg>
+          <div class="brand">the horse</div>
+          <svg
+            id="clock"
+            xmlns="http://www.w3.org/2000/svg"
+            width="634"
+            height="600"
+            viewBox="0 0 600 600"
+          >
+            <g id="face">
+              <filter id="blur-filter" x="-2" y="-2" width="100" height="100">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+              </filter>
+              <circle
+                class="circle"
+                cx="300"
+                cy="300"
+                r="253.9"
+                filter="url(#blur-filter)"
+              />
+              <line x1="300.5" y1="504.9" x2="300.5" y2="538.9" />
+              <line x1="300.5" y1="95" x2="300.5" y2="61" />
+              <line x1="538" y1="300.5" x2="504" y2="300.5" />
+              <line x1="94" y1="300.5" x2="60" y2="300.5" />
+              <line x1="122.4" y1="402.5" x2="93" y2="419.5" />
+              <line x1="196.9" y1="478.8" x2="179.8" y2="508.2" />
+              <line x1="419.9" y1="507.6" x2="402.8" y2="478.2" />
+              <line x1="508.6" y1="420.9" x2="479.1" y2="403.9" />
+              <line x1="506" y1="182.8" x2="476.4" y2="199.6" />
+              <line x1="402.4" y1="123.5" x2="419.2" y2="94" />
+              <line x1="196.1" y1="122" x2="179.1" y2="92.6" />
+              <line x1="119.8" y1="196.4" x2="90.4" y2="179.4" />
+              <circle class="mid-circle" cx="300" cy="300" r="14" />
+            </g>
+            <g id="hour">
+              <path class="hour-arm" d="M300.5 298V142" />
+              <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+            </g>
+            <g id="minute">
+              <path class="minute-arm" d="M300.5 298V85" />
+              <!-- <path class="minute-arm" d="M300.5 298V67" /> -->
+              <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+            </g>
+            <g id="second">
+              <path class="second-arm" d="M300.5 320V75" />
+              <!--<path class="second-arm" d="M300.5 320V55" /> -->
+              <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+              <circle class="mid-circle-top" cx="300" cy="300" r="7" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <!-- .clockbox -->
+    </main>
+  </body>
+</html>

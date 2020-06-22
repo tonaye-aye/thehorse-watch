@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #1a1a1a;
+  background-color: #1a1a1a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 20 20'%3E%3Cg %3E%3Cpolygon fill='%231c1c1c' points='20 10 10 0 0 0 20 20'/%3E%3Cpolygon fill='%231c1c1c' points='0 10 0 20 10 20'/%3E%3C/g%3E%3C/svg%3E");
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.clockbox,
+#clock {
+  width: 100%;
+  position: relative;
+}
+
+#clock-fill {
+  position: absolute;
+  width: 100%;
+}
+
+.brand {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 200px;
+  text-align: center;
+  color: snow;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-shadow: 0.5px 0.5px #000;
+}
+
+/* clock styles */
+.circle {
+  fill: none;
+  stroke: black;
+  stroke-width: 15;
+  stroke-miterlimit: 10;
+}
+
+.circle-fill {
+  fill: #333333;
+  stroke: none;
+  stroke-width: 15;
+  stroke-miterlimit: 10;
+}
+
+.mid-circle-top {
+  fill: silver;
+}
+.mid-circle {
+  fill: #0a0a0a;
+}
+/* .hour-marks { */
+line {
+  fill: none;
+  stroke: #757575;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+
+/* clock arms */
+.hour-arm {
+  fill: none;
+  stroke: #0e0e0e;
+  stroke-width: 14;
+  stroke-miterlimit: 10;
+}
+
+.minute-arm {
+  fill: none;
+  stroke: #0e0e0e;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+}
+
+.second-arm {
+  fill: none;
+  stroke: silver;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+
+.sizing-box {
+  fill: none;
+}
+
+/* rotation & animation */
+#hour,
+#minute,
+#second {
+  transform-origin: 300px 300px;
+  transition: transform 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 550px) {
+  .brand {
+    top: 220px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .brand {
+    top: 240px;
+    font-size: 0.8rem;
+  }
+}
