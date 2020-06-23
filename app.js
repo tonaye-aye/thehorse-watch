@@ -10,12 +10,6 @@ let hr = date.getHours();
 let min = date.getMinutes();
 let sec = date.getSeconds();
 
-console.log(min);
-digitalClock.innerHTML = `${hr}:${min} <span style="color: gray;">Sydney, Australia`;
-
-// log date
-console.log(`Hour: ${hr} Minute: ${min} Second: ${sec}`);
-
 // set degrees initially
 let hourPosition = hr * (360 / 12) + (min * (360 / 60)) / 12;
 let minPosition = min * (360 / 60) + (sec * (360 / 60)) / 60;
@@ -33,8 +27,20 @@ const runClock = () => {
   secHand.style.transform = `rotate(${secPosition}deg)`;
 };
 
+const runDigitalClock = () => {
+  let digitalDate = new Date();
+  let digitalHr = digitalDate.getHours();
+  let digitalMin = digitalDate.getMinutes();
+  // console.log(digitalMin.toString().length);
+  if (digitalMin.toString().length === 1) {
+    digitalMin = `0${digitalMin}`;
+  }
+  digitalClock.innerHTML = `${digitalHr}:${digitalMin} <span class="sydney">in Sydney</span>`;
+};
+
 const app = () => {
   // run function every second (1000ms)
+  setInterval(runDigitalClock, 1000);
   setInterval(runClock, 1000);
   window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
