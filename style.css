@@ -22,7 +22,7 @@ body {
 
 .main {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -30,17 +30,7 @@ body {
   height: calc(var(--vh, 1vh) * 100);
 }
 
-.clockbox,
-#clock {
-  width: 100%;
-  position: relative;
-}
-
-#clock-fill {
-  position: absolute;
-  width: 100%;
-}
-
+/* digital clock */
 .digital-clock {
   width: 100%;
   padding: 2rem 0 0 0;
@@ -49,22 +39,25 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-
 .sydney {
   color: gray;
 }
 
-/* clock styles */
-.circle {
-  fill: none;
-  stroke: black;
-  stroke-width: 15;
-  stroke-miterlimit: 10;
+/* clock container */
+.clockbox {
+  max-width: 500px;
 }
 
-.circle-fill {
+.clockbox,
+#clock {
+  width: 100%;
+  position: relative;
+}
+
+/* clock styles */
+.circle {
   fill: #333333;
-  stroke: none;
+  stroke: black;
   stroke-width: 15;
   stroke-miterlimit: 10;
 }
@@ -82,6 +75,7 @@ body {
 .mid-circle {
   fill: #0a0a0a;
 }
+
 /* .hour-marks { */
 line {
   fill: none;
@@ -124,6 +118,7 @@ line {
   transition: transform 0.5s ease-in-out;
 }
 
+/* footer */
 footer {
   width: 100%;
   background: rgba(255, 250, 250, 0.1);
@@ -146,4 +141,16 @@ footer a:last-child {
 
 footer a:hover {
   color: snow;
+}
+
+/* media queries */
+@media screen and (max-width: 500px) {
+  .digital-clock {
+    width: 100%;
+    padding: 2rem 0 0 0;
+    font-size: 1.6rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
 }
